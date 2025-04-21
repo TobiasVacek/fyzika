@@ -15,14 +15,17 @@
 \titlespacing*{\chapter}{0pt}{3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
 \begin{document}
 \includepdf{stamp.pdf}
+
 \chapter{Úkol měření}
 \begin{enumerate}
+	\large
 	\item Změřte voltampérovou charakteristiku PEM elektrolyzéru, sestrojte graf a extrapolací určete rozkladné napětí elektrolyzéru.
 	\item Změřte voltampérovou charakteristiku PEM palivového článku, sestrojte graf a odhadněte maximální výkon, který lze z článku odebírat.
 \end{enumerate}
 
 \chapter{Postup měření}
 \section{Příprava před měřením}
+\large
 Elektrolyzér byl při našem příchodu zapojen a naplněn vodou, proto jsme tyto úkony nemuseli dělat.
 Začali jsme, proto kontrolou zda není palivový článek zkratován a odpojením všech zatěžovacích rezistorů.
 Před zapnutím napájecího zdroje jsme nastavili výstupní napětí a omezovač proudu na nulu.
@@ -30,10 +33,12 @@ Zapnuli jsme napajecí zdroj a nastavili na něm napětí 5\,V a omezovač proud
 Povolili jsme všechna škrtítka na vstupu a výstupu palivového článku a minutu čekali, než se ustálí napětí na elektrolyzéru.
 
 \section{Měření voltampérové charakteristiky elektrolyzéru}
+\large
 Omezovačem proudu jsme postupně snižovali proud procházející elektrolyzérem, po každé změně bylo nutné minutu počkat, než se ustálí napětí na elektrolyzéru.
 Po ustálení jsme si zaznamenali hodnoty napětí a proudu z měřících přístrojů.
 
 \section{Měření voltampérové charakteristiky palivového článku}
+\large
 Nastavili jsme proud elektrolyzérem opět na maximální povolenou hodnotu 2\,A.
 Pro zajištění stabilních provozních podmínek jsme palivový článek na dobu pěti minut zatížili odporem 2\,$\Omega$.
 Po pěti minutách jsme zátěž odpojili a změřili napětí na prázdno.
@@ -50,15 +55,15 @@ Kombinace jsme měnili sestupně.
 		|>{\centering\arraybackslash}X
 		|>{\centering\arraybackslash}X|}
 		\hline
-		\textbf{Počet} & \textbf{Pomůcka}    & \textbf{číslo} & \textbf{Přesnost}        & \textbf{Rozsah} \\
+		\textbf{Počet} & \textbf{Pomůcka}    & \textbf{číslo} & \textbf{Přesnost}        & \textbf{Rozsah}                \\
 		\hline
-		3              & ampérmetr           & MY-65          & \pm 2\,\% (\pm 5 digitů) & 10\,A           \\
+		3              & ampérmetr           & MY-65          & \pm 2\,\% (\pm 5 digitů) & 10\,A                          \\
 		\hline
-		2              & voltmetr            & MY-65          & \pm0,5\,\% (\pm1 digit)  & 20\,V           \\
+		2              & voltmetr            & MY-65          & \pm0,5\,\% (\pm1 digit)  & 20\,V                          \\
 		\hline
-		1              & voltmetr            & MY-65          & \pm0,5\,\% (\pm1 digit)  & 2\,V            \\
+		1              & voltmetr            & MY-65          & \pm0,5\,\% (\pm1 digit)  & 2\,V                           \\
 		\hline
-		2              & Zatěžovací rezistor & -----          &                          & 10\,Ω, 20\,Ω    \\
+		9              & Zatěžovací rezistor & -----          &                          & 10\,Ω, 20\,Ω, 5\,Ω, 2\,Ω, 1\,Ω \\
 		\hline
 	\end{tabularx}
 \end{center}
@@ -83,9 +88,39 @@ Kombinace jsme měnili sestupně.
 		\end{tabular}
 	\end{table}
 
+	\includegraphics[width=1\textwidth, trim=2cm 1cm 3cm 1cm, clip]{VA_elektro.pdf}
 
 \end{center}
+\large
+Pro určení rozkladného napětí potřebujeme závislost U(I) aproximovat přímkou ve tvaru:
+\begin{center}
+	\LARGE
+	$I =  a_0 +a_1 \cdot U $
+\end{center}
+\large
+Po proložení grafu přímkou na https://planck.fel.cvut.cz/praktikum/grafy/grafy.php
+jsme zjistili, že hodnoty parametrů {\boldmath$a_0$ a $a_1$} jsou:
+
+\begin{center}
+	\Large
+	$a_0 = -2.11 \;;\;a_1 = 1.13$
+\end{center}
+\large A zároveň jsme získali pomocí metody nejmenších čtverců nejistotu typu B \Large{\boldmath $u_b$ = 0.05}
+\large
+\clearpage
+\noindent Rozkladné napětí {\boldmath$U_r$} najdeme tak, že nalezneme bod kdy přímka protíná v grafu osu X.
+Položíme tedy I = 0 a dostáváme výraz:
+\begin{center}
+	\Large
+	$0 = -2.11 + 1.13 \cdot U_r$
+
+	$2.11 = 1.13 \cdot U_r$
+
+	$1.89\,V \doteq U_r$
+\end{center}
+
 \section{Voltampérová charakteristika palivového článku}
+
 
 \begin{center}
 	\renewcommand{\arraystretch}{1.5}
@@ -109,42 +144,80 @@ Kombinace jsme měnili sestupně.
 			\textbf{Odpor [$\Omega$]} & 1.5        & 1     & 0.5   & 0.$\overline{333}$ &       &       &       &       &       &       &       \\
 
 			\hline
-			\textbf{Proud} [A]        & 0.181      & 0.191 & 0.21  & 0.217              &       &       &       &       &       &       &       \\
+			\textbf{Proud} [A]        & 0.181      & 0.191 & 0.213 & 0.217              &       &       &       &       &       &       &       \\
 
 			\hline
 			\textbf{Napětí} [V]       & 0.270      & 0.197 & 0.111 & 0.079              &       &       &       &       &       &       &       \\
-  \hline
+			\hline
 		\end{tabular}
 	\end{table}
 
 
+	\includegraphics[width=1\textwidth, trim=1.5cm 1cm 3cm 1cm, clip]{VA_paliv.pdf}
 \end{center}
+
 \clearpage
-\noindent Aritmetický průměr naměřených hodnot: \newline
+\noindent
+Výkon stejnosměrného proudu je definován jako {\boldmath $P = U \cdot I$}
+Palivový článek do zátěže předá největší výkon v momentě, kdy se zátěž rovná vnitřnímu odporu článku.
+Odhad maximálního výkonu, lze získat sestrojením grafu závislosti výkonu na proudu P(I) a jeho následným proložením parabolou s předpisem:
+\begin{center}
+	\Large
+	$P = a_2 \cdot I^2 +a_1 \cdot I + a_0$
+\end{center}
+\large
+Odhad maximálního výkonu, je pak roven vrcholu paraboly. Pro náš případ vypadají parametry {\boldmath $a_2$, $a_1$ a $a_0$} následnovně:
 
-\Large\[\overline{d} = \frac{1}{n}\sum_{i=1}^{n}d_i \doteq 19,96\,mm\;;\;\overline{h} = \frac{1}{n}\sum_{i=1}^{n}h_i \doteq 15,89\,mm\]
-\normalsize
-\newline Výpočet nejpravděpodobnější hodnoty objemu válce: \newline
-\Large\[\overline{V} = \frac{1}{4}\pi\overline{d}^2\overline{h} \doteq 4 972,78\,mm^3\]
-\normalsize
-\newline Výpočet standardní nejistoty aritmetického průměru meřených hodnot metodou typu A:
-\Large\[u_A(\overline{d})= \sqrt{\frac{1}{n(n-1)}\sum_{i=1}^{n}(d_i - \overline{d})^2} \doteq 0,00163299\,mm\]
-\[u_A(\overline{h})= \sqrt{\frac{1}{n(n-1)}\sum_{i=1}^{n} (h_i - \overline{h})^2} \doteq 0,01266667\,mm\]
-\normalsize
-\newline
-\noindent Výpočet standardní nejistoty nameřených hodnot metodou typu B:
-\Large\[\Delta_d = 10\, \mu m = 0,01\,mm\;;\;\Delta_h = 20\, \mu m = 0,02\,mm\]
-\[u_B(\Delta_d) = \frac{\Delta_d}{\sqrt{12}} \doteq 0,00288675\,mm\;;\;u_B(\Delta_h) \doteq \frac{\Delta_h}{\sqrt{12}} = 0,00577350\,mm\]
-\newline
-\normalsize Výpočet kombinované standardní nejistoty:
-\Large\[u_c(\overline{d}) = \sqrt{u_{Ad}^2 + u_{Bd}^2}\doteq0,00329988\,mm\]
-\[u_c(\overline{h}) = \sqrt{u_{Ah}^2 + u_{Bh}^2}\doteq  0,01392041\,mm\]
-\normalsize
-\newline
-\noindent Výpočet kombinované standardní nejistoty objemu celého válce:
-\Large\[u_c(\overline{V}) = \sqrt{\frac{\pi^2\overline{d}^2}{16}u_c^2(\overline{h})+ \frac{\pi^2\overline{d}^2\overline{h}^2}{4}u_c^2(\overline{d})} \doteq 1,62\,mm^3\]
+\begin{center}
+	\Large
+	$a_2 = -4.70\;;\; a_1 = 1.15\;;\; a_0 = -0.01$
+\end{center}
 
+
+\includegraphics[width=1\textwidth, trim=1.5cm 1cm 3cm 1cm, clip]{Vykon_paliv.pdf}
+
+\noindent Vrchol paraboly a s ním společně i náš odhad maximálního výkonu nalezneme podle vzorce:
+\begin{center}
+	\Large
+	$vrchol = -\frac{b}{2a} => I_{max} = -\frac{a_1}{2a_2}$
+
+	\vspace{1pt}
+	$I_{max} = -\frac{1.15}{2 \cdot (-4.70)}$
+
+	\vspace{3pt}
+	$I_{max} \doteq 0.1223 $
+\end{center} 
+Po dosazení do $P(I_{max}) = 60.35 \cdot 10^{-3} \,W$. 
+\clearpage 
+\noindent Nejistotu odhadu maximálního výkonu získáme dosazením nejistot pro jednotlivé parametry do vzorce:
+\begin{center}
+\Large	
+\[u^2_c = \sum_{i=0}^{2}(\frac{\partial P_{max}}{\partial a_i})u^2(a_i)\]
+\end{center}
+
+\noindent kde
+\begin{center}
+	\Large
+	$P_{max} = -\frac{a_1^2}{4a_2} + a_0$
+\end{center}
+
+Vzorec pro výslednou nejistotu je tedy
+\begin{center}
+	\Large
+	$u_c = \sqrt{(\frac{a_1^2}{4a_2^2} \cdot \sigma_2)^2 + (\frac{a_1}{2a_2} \cdot \sigma_1)^2 + (\sigma_0)^2}$
+
+	\vspace{5pt}
+	$u_c = \sqrt{(\frac{1.15^2}{4 \cdot (-4.70)^2} \cdot 0.189)^2 + (\frac{1.15}{2 \cdot (-4.70)} \cdot 0.046)^2 + (0.002)^2}$
+
+	\vspace{5pt}
+	$u_c = 0.005978$	
+\end{center}
+Směrodatné odchylky {\boldmath$\sigma$} jsme získali pomocí metody nejmenších čtverců na https://planck.fel.cvut.cz/praktikum/grafy/grafy.php
 
 \chapter{Závěr}
-\normalsize Měřením válce bylo zjištěno, že jeho objem je (4972,78 \pm\:1,62) [mm\textsuperscript{3}].
+\large 
+Pomocí proložení grafu \emph{voltampérové charakteristiky elektrolyzéru} přímkou, jsme zjistili, že rozkladné napětí $U_r = (1.89 \pm 0.05)\,V$.
+\newline
+\noindent
+Pomocí proložení grafu \emph{výkonové charakteristiky palivového článku} parabolou, jsme odhadli maximální výkon článku na $P_{max} = (0.06035\pm0.00598)W = (60.35\pm5.98)mW$. 
 \end{document}
